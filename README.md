@@ -6,7 +6,7 @@
 
 O **Genius (Simon)** é uma implementação do clássico jogo da memória desenvolvida em **SystemVerilog** para a placa **FPGA DE2**, como projeto final da disciplina de **Laboratório de Circuitos Lógicos** da **Universidade de Brasília (UnB)**.
 
-O projeto teve como objetivo aplicar conceitos de **lógica digital**, **máquinas de estados finitas (FSM)**, **circuitos sequenciais**, **memórias**, **LFSR (Linear Feedback Shift Register)** e controle de periféricos, integrando todos os módulos em um sistema funcional executado diretamente em hardware.
+O projeto foi desenvolvido com o objetivo de aplicar conceitos de **lógica digital**, **máquinas de estados finitas (FSM)**, **circuitos sequenciais**, **memórias**, **LFSR (Linear Feedback Shift Register)** e controle de periféricos, integrando todos os módulos em um sistema funcional executado diretamente em hardware.
 
 ---
 
@@ -59,22 +59,68 @@ A cada rodada:
 
 ---
 
+# 📂 Estrutura do Projeto
+
+```text
+📦 Genius-FPGA
+├── docs/           # Relatório do projeto
+├── quartus/        # Arquivos do projeto Quartus (.qpf e .qsf)
+├── src/            # Código-fonte em SystemVerilog
+└── README.md
+```
+
+---
+
 # ⚙️ Como Executar
 
 ## Requisitos
 
-- Quartus II 13.0
-- ModelSim (opcional para simulação)
-- Placa FPGA Altera DE2
+Antes de executar o projeto, é necessário possuir:
 
-## Passos
+- Quartus II 13.0 ou versão compatível;
+- ModelSim (opcional, para simulações);
+- Placa FPGA Altera DE2;
+- Cabo USB-Blaster para gravação da FPGA.
 
-1. Abra o projeto no Quartus II.
-2. Compile o projeto.
-3. Grave o arquivo `.sof` na FPGA utilizando o **Programmer (JTAG)**.
-4. Conecte os LEDs e o buzzer conforme o mapeamento dos pinos.
-5. Execute o jogo através das chaves e botões da placa. 
+## Passo a passo
 
+1. Clone este repositório:
+
+```bash
+git clone https://github.com/SEU-USUARIO/Genius-FPGA.git
+```
+
+2. Abra o Quartus II e selecione:
+
+```
+File → Open Project...
+```
+
+3. Navegue até a pasta `quartus/` e abra o arquivo:
+
+```
+jogo.qpf
+```
+
+4. Compile o projeto em:
+
+```
+Processing → Start Compilation
+```
+
+5. Conecte a placa DE2 ao computador utilizando o USB-Blaster e ligue a alimentação da FPGA.
+
+6. Abra o gravador do Quartus:
+
+```
+Tools → Programmer
+```
+
+7. Adicione o arquivo `.sof` gerado na pasta `output_files/` após a compilação e clique em **Start** para gravar a FPGA.
+
+8. Após a programação da placa, o jogo estará pronto para ser utilizado através dos botões, chaves, LEDs e displays de sete segmentos da DE2.
+
+> **Observação:** Caso deseje apenas analisar ou modificar o código, todos os módulos em SystemVerilog estão disponíveis na pasta `src/`.
 ---
 
 # 📚 Conceitos Aplicados
