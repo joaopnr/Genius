@@ -63,7 +63,7 @@ A cada rodada:
 
 ```text
 📦 Genius-FPGA
-├── docs/           # Relatório do projeto
+├── docs/           # Relatório e video de demonstração do projeto
 ├── quartus/        # Arquivos do projeto Quartus (.qpf e .qsf)
 ├── src/            # Código-fonte em SystemVerilog
 └── README.md
